@@ -35,7 +35,10 @@ def get_response(msg):
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                return random.choice(intent['responses'])
+                if 'responses_en' in intent:
+                    return random.choice(intent['responses_en'])
+                else:
+                    return random.choice(intent['responses'])
     return "Awan ti naan-anay a pannakaawatko iti dinamagmo. (I cannot understand clearly, could you rephrase?)"
 
 class ChatApplication:

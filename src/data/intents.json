@@ -2,72 +2,71 @@
   "intents": [
     {
       "tag": "greeting",
-      "patterns": ["Naimbag a bigat", "Hello", "Hi", "Kumusta", "Naimbag a malem"],
-      "responses": ["Naimbag a bigat! Ania ti maitulongko maipapan iti dagam? (Good day! How can I help with your soil?)"]
-    },
-    {
-      "tag": "soil_nitrogen_low",
       "patterns": [
-        "Apay a nababa ti nitrogen iti daga?",
-        "Kulang ti nitrogen",
-        "How to fix low nitrogen in soil?",
-        "Nitrogen deficiency"
+        "Naimbag a bigat", "Hello", "Hi", "Kumusta", "Naimbag a malem"
       ],
-      "responses": [
-        "No nababa ti nitrogen, agmula kadagiti legumes wenno usaren ti urea tapno umadu ti sustansia ti daga. (If nitrogen is low, plant legumes or apply urea to enrich the soil.)"
+      "responses_en": [
+        "Hello! I am AgriBot-CAR. Ask me anything about soil types, colors, or preparation."
+      ],
+      "responses_il": [
+        "Naimbag a bigat! Siak ni AgriBot-CAR. Agdamag maipapan iti kita ti daga, maris, wenno panagsagana."
       ]
     },
     {
-      "tag": "soil_ph_acidic",
+      "tag": "soil_color_dark",
       "patterns": [
-        "Naasid ti daga",
-        "Acidic soil",
-        "How to neutralize soil pH?",
-        "Nababa ti pH"
+        "What does dark soil mean?",
+        "Why is my soil black?",
+        "Ania ti kayat a sawen ti nangisit a daga?",
+        "Nangisit ti dagak"
       ],
-      "responses": [
-        "No naasid unay ti daga (nababa ti pH), iyaplag ti agricultural lime (apog). (Apply agricultural lime to neutralize acidic soil.)"
+      "responses_en": [
+        "Dark or black soil usually indicates a high level of organic matter and carbon, which is excellent for planting."
+      ],
+      "responses_il": [
+        "Ti nangisit a daga ket kadawyan a mangipakita ti adu a nabulok a mulmula ken carbon, a nasayaat unay a pagmulaan."
       ]
     },
     {
-      "tag": "fertilizer_recommendation",
+      "tag": "soil_color_red",
       "patterns": [
-        "Ania nga abono ti nasayaat para iti pagay?",
-        "Abono para iti nateng",
-        "What fertilizer should I use for rice?",
-        "NPK recommendation"
+        "My soil is red",
+        "What does red soil mean?",
+        "Apay a lumabaga ti daga?",
+        "Nalabbasit a daga"
       ],
-      "responses": [
-        "Para iti pagay ken nateng, usaren ti umno a kombinasion ti NPK maibatay iti resulta ti soil test. (Apply a balanced NPK fertilizer ratio based on your specific soil test reading.)"
+      "responses_en": [
+        "Red soil usually means it is rich in iron oxide but might be older and less fertile. It often needs organic compost."
+      ],
+      "responses_il": [
+        "Ti nalabbasit a daga ket masansan nga aduan iti iron oxide ngem baka nakurang iti sustansia. Masapulna ti compost."
+      ]
+    },
+    {
+      "tag": "soil_texture_sticky",
+      "patterns": [
+        "My soil is very sticky",
+        "Sticky clay soil",
+        "Nakedked ti dagak",
+        "Napigket a daga"
+      ],
+      "responses_en": [
+        "Sticky soil is usually heavy clay. It holds nutrients well but drains poorly. You can improve it by adding organic matter like rice hulls."
+      ],
+      "responses_il": [
+        "Ti napigket a daga ket puro a luppo. Nasayaat a mangtengngel iti sustansia ngem narigat a maatianan. Nayunan iti nabulok a mulmula wenno taep."
       ]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Agyamanak", "Salamat", "Thank you", "Goodbye", "Kasta pa"],
-      "responses": ["Agyamanak! Sapay koma ta nasayaat ti apitmo. (Thank you! Wishing you a bountiful harvest.)"]
-    },
-    {
-      "tag": "analyze_carbon",
       "patterns": [
-        "What is the organic carbon level of my soil?",
-        "Mabalin kadi a kitaem ti carbon ti dagak?",
-        "Predict soil organic carbon",
-        "Check carbon levels"
+        "Agyamanak", "Salamat", "Thank you", "Goodbye", "Kasta pa"
       ],
-      "responses": [
-        "TRIGGER_CARBON_MODEL"
-      ]
-    },
-    {
-      "tag": "optimize_npk",
-      "patterns": [
-        "Ania ti kasayaatan nga NPK abono para iti daytoy a daga?",
-        "Calculate NPK fertilizer",
-        "Give me the fertilizer recommendation based on my scan",
-        "Optimize NPK"
+      "responses_en": [
+        "You're welcome! Wishing you a bountiful harvest."
       ],
-      "responses": [
-        "TRIGGER_NPK_MODEL"
+      "responses_il": [
+        "Agyamanak met! Sapay koma ta nasayaat ti apitmo."
       ]
     }
   ]

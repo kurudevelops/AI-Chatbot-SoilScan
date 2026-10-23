@@ -2,17 +2,23 @@ import streamlit as st
 import torch
 import json
 import random
+import numpy as np
 from model import AgriBotNN
 from nltk_utils import bag_of_words, tokenize
-
-# TO RUN ME USE -> python -m streamlit run src/app.py
 
 # --- Page Configuration ---
 st.set_page_config(page_title="AgriBot-CAR", page_icon="🌱", layout="centered")
 st.title("🌱 AgriBot-CAR")
-st.caption("Cordillera Agricultural Soil Analysis Assistant")
+st.caption("Cordillera Agricultural Soil Knowledge Base")
 
-# --- Load Model (Cached to prevent reloading on every chat) ---
+# --- Language Switch ---
+language_tab = st.radio(
+    "Select Language / Piliem ti Pagsasaom:",
+    ["English", "Ilokano"],
+    horizontal=True
+)
+
+# --- Load Model ---
 @st.cache_resource
 def load_ai_model():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -30,23 +36,21 @@ model, data, intents, device = load_ai_model()
 
 # --- Initialize Chat History ---
 if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "Naimbag a bigat! Ania ti maitulongko maipapan iti dagam? (Hello! How can I help with your soil?)"}
-    ]
+    st.session_state.messages = []
+    st.session_state.messages.append(
+        {"role": "assistant", "content": "Naimbag a bigat! Hello! Ask me anything about soil."}
+    )
 
-# Display previous messages
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
 # --- Chat Input & AI Response ---
-if prompt := st.chat_input("Ask about your soil analysis... (e.g., Apay a nababa ti nitrogen?)"):
-    # 1. Display User Message
+if prompt := st.chat_input("Ask about your soil... / Agdamag maipapan iti daga..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # 2. Process via PyTorch Model
     sentence = tokenize(prompt)
     X = bag_of_words(sentence, data['all_words'])
     X = torch.tensor(X.reshape(1, X.shape[0]), dtype=torch.float32).to(device)
@@ -58,15 +62,20 @@ if prompt := st.chat_input("Ask about your soil analysis... (e.g., Apay a nababa
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
 
-    # 3. Determine Response
+    # Determine Response based on Language Tab
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                bot_response = random.choice(intent['responses'])
+                if language_tab == "English":
+                    bot_response = random.choice(intent['responses_en'])
+                else:
+                    bot_response = random.choice(intent['responses_il'])
     else:
-        bot_response = "Awan ti naan-anay a pannakaawatko. Mabalin kadi a padasem manen? (I didn't quite understand, could you rephrase?)"
+        if language_tab == "English":
+            bot_response = "I didn't quite understand that. Could you rephrase your question?"
+        else:
+            bot_response = "Awan ti naan-anay a pannakaawatko. Mabalin kadi a padasem manen?"
 
-    # 4. Display AI Response
     with st.chat_message("assistant"):
         st.markdown(bot_response)
     st.session_state.messages.append({"role": "assistant", "content": bot_response})

@@ -1,26 +1,29 @@
 import numpy as np
 import nltk
-from nltk.stem.porter import PorterStemmer
 
-# Automatically download the tokenizer model if missing
 nltk.download('punkt', quiet=True)
 nltk.download('punkt_tab', quiet=True)
 
-stemmer = PorterStemmer()
+# Ilokano and Tagalog function words that carry no predictive signal
+STOPWORDS = {
+    'ti', 'a', 'iti', 'ken', 'nga', 'ket', 'kadagiti', 'ni', 'dagiti', 'idi',
+    'ang', 'mga', 'ng', 'sa', 'at', 'ay', 'na', 'pa', 'ba', 'is', 'are', 'the', 'a', 'of'
+}
 
 def tokenize(sentence):
-    """Splits sentence into an array of tokens/words."""
-    return nltk.word_tokenize(sentence.lower())
+    """Splits sentence into lowercase tokens, removing common stopwords."""
+    tokens = nltk.word_tokenize(sentence.lower())
+    return [w for w in tokens if w not in STOPWORDS]
 
 def stem(word):
-    """Finds the root form of the token."""
-    return stemmer.stem(word.lower())
+    """
+    Skipping English stemming (PorterStemmer) because it aggressively chops 
+    Ilokano words (e.g., nangisit -> nangisi), ruining pattern matching.
+    """
+    return word.lower()
 
 def bag_of_words(tokenized_sentence, words):
-    """
-    Returns array of 0 or 1 for each word in the vocabulary that allows
-    the sentence to be represented as a vector for the neural network.
-    """
+    """Creates a binary vector for the neural network."""
     sentence_words = [stem(word) for word in tokenized_sentence]
     bag = np.zeros(len(words), dtype=np.float32)
     for idx, w in enumerate(words):

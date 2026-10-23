@@ -5,7 +5,7 @@ import random
 from model import AgriBotNN
 from nltk_utils import bag_of_words, tokenize
 
-# TO RUN ME USE ->  
+# TO RUN ME USE -> python -m streamlit run src/app.py
 
 # --- Page Configuration ---
 st.set_page_config(page_title="AgriBot-CAR", page_icon="🌱", layout="centered")

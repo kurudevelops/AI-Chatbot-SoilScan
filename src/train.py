@@ -40,10 +40,10 @@ for (pattern_sentence, tag) in xy:
 # 80/20 Train-Validation Split to prevent overfitting
 X_train, X_val, y_train, y_val = train_test_split(X_all, y_all, test_size=0.2, random_state=42)
 
-X_train = torch.tensor(X_train, dtype=torch.float32)
-y_train = torch.tensor(y_train, dtype=torch.long)
-X_val = torch.tensor(X_val, dtype=torch.float32)
-y_val = torch.tensor(y_val, dtype=torch.long)
+X_train = torch.tensor(np.array(X_train), dtype=torch.float32)
+y_train = torch.tensor(np.array(y_train), dtype=torch.long)
+X_val = torch.tensor(np.array(X_val), dtype=torch.float32)
+y_val = torch.tensor(np.array(y_val), dtype=torch.long)
 
 class ChatDataset(Dataset):
     def __init__(self, x_data, y_data):

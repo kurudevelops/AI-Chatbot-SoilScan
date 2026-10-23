@@ -111,6 +111,92 @@
       ]
     },
     {
+      "tag": "npk_levels",
+      "patterns": [
+        "How do you classify NPK?",
+        "What does Low, Medium, High mean?",
+        "Kasano a maammuan no low wenno high?",
+        "Ania ti kayat a sawen ti 0, 1, ken 2?",
+        "NPK levels explained",
+        "How are the nutrients measured"
+      ],
+      "responses_en": [
+        "The AI classifies each nutrient (Nitrogen, Phosphorus, Potassium) on a scale from 0 to 2. '0' means Low (deficient), '1' means Medium (adequate), and '2' means High (surplus)."
+      ],
+      "responses_il": [
+        "Ti AI ket mangklasipika iti Nitrogen (N), Phosphorus (P), ken Potassium (K) iti tallo a lebel: 0 ket Low (Nakurang), 1 ket Medium (Kalalainganna), ken 2 ket High (Nangato)."
+      ]
+    },
+    {
+      "tag": "ai_process",
+      "patterns": [
+        "What is the process of the AI?",
+        "How does the app analyze the soil?",
+        "Kasano nga ammuen ti AI ti daga?",
+        "Step by step AI process",
+        "How does the scan work",
+        "Explain the analysis process",
+        "What is the 3-model stack"
+      ],
+      "responses_en": [
+        "The system uses a 3-Model Stack. First, an SVM analyzes the soil's color. Second, an XGBoost model checks color and texture. Third, a Hybrid CNN (Net-88) extracts deep visual features. Finally, a Meta-Logistic Regression model combines their votes for the final NPK prediction!"
+      ],
+      "responses_il": [
+        "Ag-usar ti sistema iti 3-Model Stack. Umuna, ammuen ti SVM ti maris. Maikadua, kitaen ti XGBoost ti maris ken linis. Maikatlo, agala ti Hybrid CNN (Net-88) iti naun-uneg a ladawan. Kamaudiananna, pagtiponen ti Meta-Logistic Regression dagiti resultada para iti pinal a pugto ti NPK!"
+      ]
+    },
+    {
+      "tag": "color_correlation",
+      "patterns": [
+        "Does darker soil mean more nitrogen?",
+        "How does color relate to NPK?",
+        "Apay a nangisit ti daga nga adu ti nitrogen?",
+        "Can color accurately predict nutrients?",
+        "What does L value mean",
+        "Color and nutrient correlation"
+      ],
+      "responses_en": [
+        "Our data shows that darker soils (lower L* lightness value) often correlate with higher Nitrogen and Potassium. However, color mainly reflects organic matter, moisture, and iron. Color is a good indicator of separability, but it doesn't strictly 'cause' NPK levels."
+      ],
+      "responses_il": [
+        "Ipakita ti datami nga ti nasingsit a daga (nababa nga L* value) ket masansan nga ad-adu ti Nitrogen ken Potassium-na. Ngem laglagipen a ti maris ket ibasar iti nabulok a mulmula, kabaasa, ken landok (iron). Mangipakita laeng daytoy iti pagdumaan, ngem saan a direkta a mangibaga iti NPK."
+      ]
+    },
+    {
+      "tag": "ai_limitations",
+      "patterns": [
+        "Can this replace a lab test?",
+        "Is this 100% accurate on all phones?",
+        "Mabalin kadi nga isukat daytoy iti lab?",
+        "Will it work on my camera?",
+        "Why is the result uncertain",
+        "Is the camera scan enough"
+      ],
+      "responses_en": [
+        "This AI provides a fast estimate but is NOT a replacement for a chemical lab test. Our 85% accuracy is based on familiar patterns. Performance may drop if you use a completely new smartphone camera or scan a soil pattern the AI hasn't trained on yet."
+      ],
+      "responses_il": [
+        "Daytoy AI ket mangted laeng ti napartak a karkulo ngem SAAN a kasukat ti pudno a chemical lab test. Baka bumaba ti accuracy-na no usaren ti baro a klase ti smartphone wenno no sabali a kita ti daga nga awan pay iti database-mi."
+      ]
+    },
+    {
+      "tag": "ai_accuracy_detailed",
+      "patterns": [
+        "How accurate is the AI?",
+        "Is the soil scan accurate?",
+        "Mamatian kadi daytoy AI?",
+        "Agpayso kadi ti resulta?",
+        "Accuracy rate",
+        "Mano ti accuracy na"
+      ],
+      "responses_en": [
+        "Based on our Meta-LR Stack evaluation, the AI is highly accurate: 85.48% Accuracy (77.10% Macro-F1) for Nitrogen, 78.42% (78.36% Macro-F1) for Phosphorus, and 84.37% (83.78% Macro-F1) for Potassium."
+      ],
+      "responses_il": [
+        "Maibatay iti Meta-LR Stack a panagadalmi, nangato ti kina-eksakto ti AI: 85.48% (77.10% Macro-F1) para iti Nitrogen, 78.42% iti Phosphorus, ken 84.37% iti Potassium."
+      ]
+    },
+    {
       "tag": "goodbye",
       "patterns": [
         "Agyamanak", "Salamat", "Thank you", "Goodbye", "Kasta pa", "Bye", "Thanks bot", "Sige salamat", "Umalis na ako", "Thanks for the help", "Agyamanak unay"

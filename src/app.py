@@ -13,35 +13,29 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 
 # --- Page Configuration ---
-st.set_page_config(page_title="AgriBot-CAR", page_icon="🌱", layout="centered")
+st.set_page_config(page_title="AgriBot-CAR Assistant", page_icon="🌱", layout="centered")
 
 # --- UI Setup ---
-st.title("🌱 AgriBot-CAR")
+st.title("🌱 AgriBot-CAR Assistant")
 st.caption("Cordillera Agricultural Soil Knowledge Base")
 
-# --- Sidebar: Soil Scan Context ---
-with st.sidebar:
-    st.header("📊 Input Soil Scan Results")
-    st.write("Link your thesis results to personalize the chat.")
-    n_level = st.selectbox("Nitrogen (N)", ["Unknown", "Low", "Medium", "High"])
-    p_level = st.selectbox("Phosphorus (P)", ["Unknown", "Low", "Medium", "High"])
-    k_level = st.selectbox("Potassium (K)", ["Unknown", "Low", "Medium", "High"])
-    
-    if st.button("Apply Context"):
-        st.session_state.scan_context = {"N": n_level, "P": p_level, "K": k_level}
-        st.success("Scan context updated!")
-    
-    st.divider()
-    if st.button("🗑️ Clear Chat"):
+# --- Top Controls (Language & Clear Chat) ---
+col_lang, col_clear = st.columns([3, 1])
+
+with col_lang:
+    language_tab = st.radio(
+        "Language / Pagsasaom:",
+        ["English", "Ilokano"],
+        horizontal=True,
+        label_visibility="collapsed"
+    )
+
+with col_clear:
+    if st.button("🗑️ Clear Chat", use_container_width=True):
         st.session_state.messages = []
         st.rerun()
 
-# --- Language Switch ---
-language_tab = st.radio(
-    "Select Language / Piliem ti Pagsasaom:",
-    ["English", "Ilokano"],
-    horizontal=True
-)
+st.divider()
 
 # --- Load Model ---
 @st.cache_resource
@@ -98,17 +92,8 @@ def get_bot_response(user_text, lang):
     tag = data["tags"][i1.item()]
     intent = intent_by_tag[tag]
     key = "responses_en" if lang == "English" else "responses_il"
-    base_response = random.choice(intent[key])
     
-    # 5. Context Injection (Thesis Connection)
-    if tag == "fertilizer_guidance" and "scan_context" in st.session_state:
-        ctx = st.session_state.scan_context
-        if lang == "English":
-            base_response += f"\n\n**Note on your scan:** Since your Nitrogen is {ctx['N']}, Phosphorus is {ctx['P']}, and Potassium is {ctx['K']}, focus your fertilizer ratio accordingly."
-        else:
-            base_response += f"\n\n**Palagip iti scan-mo:** Gapu ta ti Nitrogen mo ket {ctx['N']}, Phosphorus ket {ctx['P']}, ken Potassium ket {ctx['K']}, ibasarmo ditoy ti kaadu ti abonem."
-            
-    return base_response, tag
+    return random.choice(intent[key]), tag
 
 # --- Initialize Chat History ---
 if "messages" not in st.session_state:
@@ -122,13 +107,13 @@ col1, col2, col3 = st.columns(3)
 suggested_prompt = None
 
 if language_tab == "English":
-    if col1.button("How accurate is the AI?"): suggested_prompt = "How accurate is the AI?"
-    if col2.button("Scan on paper or container?"): suggested_prompt = "Should I scan on paper or in a container?"
-    if col3.button("What is NPK?"): suggested_prompt = "What is NPK?"
+    if col1.button("How does the AI work?", use_container_width=True): suggested_prompt = "What is the process of the AI?"
+    if col2.button("Does color indicate NPK?", use_container_width=True): suggested_prompt = "How does color relate to NPK?"
+    if col3.button("How are levels (0,1,2) classified?", use_container_width=True): suggested_prompt = "What does Low, Medium, High mean?"
 else:
-    if col1.button("Mamatian kadi daytoy AI?"): suggested_prompt = "Mamatian kadi daytoy AI?"
-    if col2.button("Nasaysayaat kadi ti papel?"): suggested_prompt = "Nasaysayaat kadi ti papel wenno container?"
-    if col3.button("Ania ti NPK?"): suggested_prompt = "Ania ti NPK?"
+    if col1.button("Kasano nga aggana ti AI?", use_container_width=True): suggested_prompt = "Kasano nga ammuen ti AI ti daga?"
+    if col2.button("Adda kadi epekto ti maris?", use_container_width=True): suggested_prompt = "Apay a nangisit ti daga nga adu ti nitrogen?"
+    if col3.button("Ania ti 0, 1, ken 2?", use_container_width=True): suggested_prompt = "Ania ti kayat a sawen ti 0, 1, ken 2?"
 
 # Display messages
 for message in st.session_state.messages:

@@ -1,0 +1,74 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Naimbag a bigat", "Hello", "Hi", "Kumusta", "Naimbag a malem"],
+      "responses": ["Naimbag a bigat! Ania ti maitulongko maipapan iti dagam? (Good day! How can I help with your soil?)"]
+    },
+    {
+      "tag": "soil_nitrogen_low",
+      "patterns": [
+        "Apay a nababa ti nitrogen iti daga?",
+        "Kulang ti nitrogen",
+        "How to fix low nitrogen in soil?",
+        "Nitrogen deficiency"
+      ],
+      "responses": [
+        "No nababa ti nitrogen, agmula kadagiti legumes wenno usaren ti urea tapno umadu ti sustansia ti daga. (If nitrogen is low, plant legumes or apply urea to enrich the soil.)"
+      ]
+    },
+    {
+      "tag": "soil_ph_acidic",
+      "patterns": [
+        "Naasid ti daga",
+        "Acidic soil",
+        "How to neutralize soil pH?",
+        "Nababa ti pH"
+      ],
+      "responses": [
+        "No naasid unay ti daga (nababa ti pH), iyaplag ti agricultural lime (apog). (Apply agricultural lime to neutralize acidic soil.)"
+      ]
+    },
+    {
+      "tag": "fertilizer_recommendation",
+      "patterns": [
+        "Ania nga abono ti nasayaat para iti pagay?",
+        "Abono para iti nateng",
+        "What fertilizer should I use for rice?",
+        "NPK recommendation"
+      ],
+      "responses": [
+        "Para iti pagay ken nateng, usaren ti umno a kombinasion ti NPK maibatay iti resulta ti soil test. (Apply a balanced NPK fertilizer ratio based on your specific soil test reading.)"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Agyamanak", "Salamat", "Thank you", "Goodbye", "Kasta pa"],
+      "responses": ["Agyamanak! Sapay koma ta nasayaat ti apitmo. (Thank you! Wishing you a bountiful harvest.)"]
+    },
+    {
+      "tag": "analyze_carbon",
+      "patterns": [
+        "What is the organic carbon level of my soil?",
+        "Mabalin kadi a kitaem ti carbon ti dagak?",
+        "Predict soil organic carbon",
+        "Check carbon levels"
+      ],
+      "responses": [
+        "TRIGGER_CARBON_MODEL"
+      ]
+    },
+    {
+      "tag": "optimize_npk",
+      "patterns": [
+        "Ania ti kasayaatan nga NPK abono para iti daytoy a daga?",
+        "Calculate NPK fertilizer",
+        "Give me the fertilizer recommendation based on my scan",
+        "Optimize NPK"
+      ],
+      "responses": [
+        "TRIGGER_NPK_MODEL"
+      ]
+    }
+  ]
+}

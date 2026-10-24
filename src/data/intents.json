@@ -10,8 +10,8 @@
         "Hi there! I can help you understand your soil scan, NPK levels, or taking a proper picture of your soil."
       ],
       "responses_il": [
-        "Naimbag a bigat! Siak ni AgriBot-CAR. Agdamag maipapan iti kita ti daga, NPK abono, wenno ti AI analysis-mi.",
-        "Kumusta! Mabalin a tumulongak maipapan iti daga, abono, wenno panag-scan iti daga."
+        "Naimbag a bigat! Siak ni AgriBot-CAR. Agdamagka maipapan iti kita ti daga, abono a NPK, wenno ti panagadal ti AI-mi.",
+        "Kumusta! Mabalinko a tumulong iti panangawat iti resulta ti panag-scan ti daga, lebel ti NPK, ken panangaramid ti naimbag a ladawan ti daga."
       ]
     },
     {
@@ -23,7 +23,7 @@
         "Based on our 3-Model Stack thesis (SVM, XGBoost, Net-88), the AI is highly accurate on held-out photos: 85.48% Accuracy (77.10% Macro-F1) for Nitrogen, 78.42% (78.36% F1) for Phosphorus, and 84.37% (83.78% F1) for Potassium. However, this complements—not replaces—a lab test."
       ],
       "responses_il": [
-        "Maibatay iti 3-Model Stack a panagadalmi, nangato ti kina-eksakto ti AI: 85.48% (77.10% Macro-F1) para iti Nitrogen, 78.42% iti Phosphorus, ken 84.37% iti Potassium. Ngem laglagipen a daytoy ket pammattian laeng, saan a mangsukat iti pudno a lab test."
+        "Maibatay iti 3-model stack a panagadalmi (SVM, XGBoost, ken Net-88), nasayaat a ti panagpataud ti AI kadagiti naimbag a ladawan: 85.48% a kinatama para iti Nitrogen, 78.42% para iti Phosphorus, ken 84.37% para iti Potassium. Gapuna, daytoy ket supplemental laeng, saan a mangsukisok iti lab test."
       ]
     },
     {
@@ -35,7 +35,7 @@
         "This tool was built using a 3-Model Stack trained on the SoilScan dataset. It combines SVM (Color), XGBoost (Color+Texture), and a Hybrid CNN (Net-88) for advanced image recognition. They vote together to predict NPK levels."
       ],
       "responses_il": [
-        "Naaramid daytoy babaen ti 3-Model Stack nga inusar ti SoilScan dataset. Addaan SVM para iti maris, XGBoost para iti maris ken linis, ken Hybrid CNN (Net-88). Agtitinnulong dagitoy tapno pugtuanda ti NPK ti daga."
+        "Daytoy a tool ket naidaras iti 3-model stack a na-training iti SoilScan dataset. Agsardeng iti SVM para iti maris, XGBoost para iti maris ken texture, ken Hybrid CNN (Net-88) para iti naadvanced a panag-recognize iti ladawan. Agpagtinnulong dagitoy tapno mairaman ti panag-predict iti lebel ti NPK."
       ]
     },
     {
@@ -47,7 +47,7 @@
         "For best results, place the soil flat on a white paper under natural light. Our data shows a color shift (Delta E) when scanning inside a container, which lowers accuracy. Avoid heavy shadows!"
       ],
       "responses_il": [
-        "Para iti kapintasan a resulta, ikabil ti daga iti nadalumpinas a puraw a papel iti lawag ti init. Ipakita ti datami nga adda panagbaliw ti maris no ukraden iti uneg ti container. Liklikan ti nalinong unay a pakaalaan!"
+        "Para iti nasayaat a resulta, ikabil ti daga iti nadutokan a pinalawag a papel iti natural a lawag. Ipakita ti data-mi nga adda panagbaliw ti maris no ag-scan iti uneg ti container, a mangpababa iti kinatama ti resulta. Liklikan ti nabileg a anino!"
       ]
     },
     {
@@ -59,7 +59,7 @@
         "NPK stands for Nitrogen (leaf growth), Phosphorus (root and flower development), and Potassium (overall plant health and disease resistance). Finding the right balance is key to a good harvest."
       ],
       "responses_il": [
-        "Ti NPK ket kayatna a sawen Nitrogen (para idadakkel ti bulong), Phosphorus (para iti ramut ken sabong), ken Potassium (para iti pigsa ti mula laban iti sakit). Masapul ti balanse a kaaduanda para iti napintas nga apit."
+        "Ti NPK ket nagtaud iti Nitrogen (pangpataud ti dahon), Phosphorus (pangpataud ti ramut ken sabong), ken Potassium (panangpatibker ti kangrunaan a paset ti mula ken panagresistana iti sakit). Ti naimbag a balanse ti mangpataud iti nasayaat a panagapit."
       ]
     },
     {
@@ -71,7 +71,7 @@
         "Dark or black soil usually indicates a high level of organic carbon and organic matter, which is excellent for planting and retains moisture well."
       ],
       "responses_il": [
-        "Ti nangisit a daga ket kadawyan a mangipakita ti adu a nabulok a mulmula ken organic carbon, a nasayaat unay a pagmulaan ken nalaing a mangtengngel ti basa."
+        "Ti nangisit wenno maitit a daga ket kasla agipakita iti adu a organic carbon ken organic matter, a naimbag iti panagmula ken mangtengngel iti danum."
       ]
     },
     {
@@ -83,7 +83,7 @@
         "Red soil usually means it is rich in iron oxide but might be older, highly weathered, and less fertile. It often needs organic compost to restore nutrients."
       ],
       "responses_il": [
-        "Ti nalabbasit a daga ket masansan nga aduan iti iron oxide ngem baka nakurang iti sustansia gapu iti kabayagna. Masapulna ti compost tapno maisubli ti kinaganusna."
+        "Ti lumabaga a daga ket kasla adu iti iron oxide, ngem mabalin a naedad a nangato ti panag-aldaw ken nabati iti kinadaga. Masapulna ti organic compost tapno agsubli ti sustansia."
       ]
     },
     {
@@ -95,7 +95,7 @@
         "If Nitrogen is low, apply urea or plant legumes. For low Phosphorus, add bone meal or rock phosphate. For low Potassium, use potash or wood ash. Always check your specific crop requirements in the Cordilleras."
       ],
       "responses_il": [
-        "No nababa ti Nitrogen, usaren ti urea wenno agmula kadagiti legumes. No nababa ti Phosphorus, mangikabil ti bone meal. Para iti Potassium, usaren ti dapo wenno potash. Kitaen latta ti kasapulan ti mulam ditoy Cordillera."
+        "No nababa ti Nitrogen, usaren ti urea wenno agmula iti mga legumes. No nababa ti Phosphorus, ikabil ti bone meal wenno rock phosphate. Para iti Potassium, usaren ti potash wenno wood ash. Kanayon a kitaen ti kasapulan ti tanummo iti Cordillera."
       ]
     },
     {
@@ -107,7 +107,7 @@
         "Disclaimer: This AI scan provides a fast, accessible estimate based on color and texture. It is NOT a complete replacement for a chemical lab test. Factors like soil moisture and camera quality can affect predictions."
       ],
       "responses_il": [
-        "Palagip: Daytoy AI ket mangted laeng ti napartak a karkulo maibatay iti maris ken linis ti daga. SAAN a kasukat ti pudno a chemical lab test. Dagiti bambanag kas iti kabaasa ti daga ken klase ti camera ket mabalin a makaapektar iti resulta."
+        "Panglaglagip: Daytoy a panag-scan ti AI ket mangted iti napartak a pagbanagan maibatay iti maris ken texture ti daga. SAAN a pinalawag nga mangsukisok iti chemicallab test. Dagiti factor kas iti kabasa ti daga ken kinatkal ti camera ket mabalin a mang-affected iti resulta."
       ]
     },
     {
@@ -124,7 +124,7 @@
         "The AI classifies each nutrient (Nitrogen, Phosphorus, Potassium) on a scale from 0 to 2. '0' means Low (deficient), '1' means Medium (adequate), and '2' means High (surplus)."
       ],
       "responses_il": [
-        "Ti AI ket mangklasipika iti Nitrogen (N), Phosphorus (P), ken Potassium (K) iti tallo a lebel: 0 ket Low (Nakurang), 1 ket Medium (Kalalainganna), ken 2 ket High (Nangato)."
+        "Ti AI ket mangklasipika iti tunggal sustansia (Nitrogen, Phosphorus, ken Potassium) iti skala manipud 0 agingga iti 2. Ti '0' ket Low (nakurang), ti '1' ket Medium (saan a nabayag), ken ti '2' ket High (adu)."
       ]
     },
     {
@@ -142,7 +142,7 @@
         "The system uses a 3-Model Stack. First, an SVM analyzes the soil's color. Second, an XGBoost model checks color and texture. Third, a Hybrid CNN (Net-88) extracts deep visual features. Finally, a Meta-Logistic Regression model combines their votes for the final NPK prediction!"
       ],
       "responses_il": [
-        "Ag-usar ti sistema iti 3-Model Stack. Umuna, ammuen ti SVM ti maris. Maikadua, kitaen ti XGBoost ti maris ken linis. Maikatlo, agala ti Hybrid CNN (Net-88) iti naun-uneg a ladawan. Kamaudiananna, pagtiponen ti Meta-Logistic Regression dagiti resultada para iti pinal a pugto ti NPK!"
+        "Ti sistema ket usaren ti 3-model stack. Umuna, ti SVM ket mang-analisar iti maris ti daga. Maikadua, ti XGBoost ket mang-check iti maris ken texture. Maikatlo, ti Hybrid CNN (Net-88) ket mangala iti nauneg a visual features. Panagpatingga, ti Meta-Logistic Regression ket pagtiponen dagiti resulta tapno maawagan ti pinal a prediction ti NPK!"
       ]
     },
     {
@@ -159,7 +159,7 @@
         "Our data shows that darker soils (lower L* lightness value) often correlate with higher Nitrogen and Potassium. However, color mainly reflects organic matter, moisture, and iron. Color is a good indicator of separability, but it doesn't strictly 'cause' NPK levels."
       ],
       "responses_il": [
-        "Ipakita ti datami nga ti nasingsit a daga (nababa nga L* value) ket masansan nga ad-adu ti Nitrogen ken Potassium-na. Ngem laglagipen a ti maris ket ibasar iti nabulok a mulmula, kabaasa, ken landok (iron). Mangipakita laeng daytoy iti pagdumaan, ngem saan a direkta a mangibaga iti NPK."
+        "Ipakita ti data-mi a ti nangisit a daga (babaan a L* lightness value) ket kasla masapul iti adu a Nitrogen ken Potassium. Ngem, ti maris ket agrepresenta iti organic matter, moisture, ken iron. Ti maris ket naimbag a sukog, ngem saan a ti kaudian a sanhi ti lebel ti NPK."
       ]
     },
     {
@@ -176,7 +176,7 @@
         "This AI provides a fast estimate but is NOT a replacement for a chemical lab test. Our 85% accuracy is based on familiar patterns. Performance may drop if you use a completely new smartphone camera or scan a soil pattern the AI hasn't trained on yet."
       ],
       "responses_il": [
-        "Daytoy AI ket mangted laeng ti napartak a karkulo ngem SAAN a kasukat ti pudno a chemical lab test. Baka bumaba ti accuracy-na no usaren ti baro a klase ti smartphone wenno no sabali a kita ti daga nga awan pay iti database-mi."
+        "Daytoy a AI ket mangted iti mabilis a pagbanagan ngem SAAN a mangsukisok iti kemikal a lab test. Ti 85% a kinatama ket maibatay iti familiar a pattern. Mabalin a bumaba ti performance no usaren ti baro a modelo ti smartphone wenno no ag-scan iti daga a saan pay a na-training ti AI."
       ]
     },
     {
@@ -193,7 +193,7 @@
         "Based on our Meta-LR Stack evaluation, the AI is highly accurate: 85.48% Accuracy (77.10% Macro-F1) for Nitrogen, 78.42% (78.36% Macro-F1) for Phosphorus, and 84.37% (83.78% Macro-F1) for Potassium."
       ],
       "responses_il": [
-        "Maibatay iti Meta-LR Stack a panagadalmi, nangato ti kina-eksakto ti AI: 85.48% (77.10% Macro-F1) para iti Nitrogen, 78.42% iti Phosphorus, ken 84.37% iti Potassium."
+        "Maibatay iti panag-evaluate ti Meta-LR Stack, nasayaat a ti resulta ti AI: 85.48% a kinatama (77.10% Macro-F1) para iti Nitrogen, 78.42% (78.36% Macro-F1) para iti Phosphorus, ken 84.37% (83.78% Macro-F1) para iti Potassium."
       ]
     },
     {
@@ -205,7 +205,7 @@
         "You're welcome! Wishing you a bountiful harvest. Feel free to return if you have more questions."
       ],
       "responses_il": [
-        "Agyamanak met! Sapay koma ta nasayaat ti apitmo. Agsublika laeng no adda pay kayatmo a damagen."
+        "Agyamanak met! Sapay koma ta nayon ti panagapitmo. Agsubli laeng no adda pay dagiti maipapan iti daga a pagdudamagmo."
       ]
     }
   ]

@@ -70,7 +70,7 @@ def get_bot_response(user_text, lang):
     # 1. Out-of-vocabulary check
     if X.sum() == 0:
         log_unanswered(user_text)
-        fallback = "I didn't quite catch that. Are you asking about **soil color**, **how to scan**, or **AI accuracy**?" if lang == "English" else "Awan ti naan-anay a pannakaawatko. Agdadamag ka kadi maipapan iti **maris ti daga**, **panag-scan**, wenno **kina-eksakto ti AI**?"
+        fallback = "I didn't quite catch that. Are you asking about **soil color**, **how to scan**, or **AI accuracy**?" if lang == "English" else "Saan a naawatan ti damagmo. Agdamagka kadi maipapan iti **maris ti daga**, **panag-scan**, wenno **kinanasken ti AI**?"
         return fallback, None
 
     x = torch.tensor(X, dtype=torch.float32).unsqueeze(0).to(device)
@@ -85,7 +85,7 @@ def get_bot_response(user_text, lang):
     if p1 < CONF_MIN or (p1 - p2) < MARGIN_MIN:
         log_unanswered(user_text)
         tag1, tag2 = data["tags"][i1.item()], data["tags"][i2.item()]
-        fallback = f"I didn't catch that. Did you mean **{tag1.replace('_', ' ')}** or **{tag2.replace('_', ' ')}**?" if lang == "English" else f"Diak maawatan. Kayatmo kadi sawen ket **{tag1.replace('_', ' ')}** wenno **{tag2.replace('_', ' ')}**?"
+        fallback = f"I didn't catch that. Did you mean **{tag1.replace('_', ' ')}** or **{tag2.replace('_', ' ')}**?" if lang == "English" else f"Saan a naawatan ti damagmo. Kayatmo kadi a sawen **{tag1.replace('_', ' ')}** wenno **{tag2.replace('_', ' ')}**?"
         return fallback, None
 
     # 4. Dictionary Lookup
@@ -98,7 +98,7 @@ def get_bot_response(user_text, lang):
 # --- Initialize Chat History ---
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    greeting = "Hello! Ask me anything about soil, NPK, or our AI stack." if language_tab == "English" else "Naimbag a bigat! Agdamag maipapan iti daga, NPK, wenno ti AI stack."
+    greeting = "Hello! Ask me anything about soil, NPK, or our AI stack." if language_tab == "English" else "Naimbag a bigat! Agdamagka maipapan iti daga, NPK, wenno ti panagadal ti AI."
     st.session_state.messages.append({"role": "assistant", "content": greeting})
 
 # --- Suggested Prompts UI ---
@@ -111,8 +111,8 @@ if language_tab == "English":
     if col2.button("Does color indicate NPK?", use_container_width=True): suggested_prompt = "How does color relate to NPK?"
     if col3.button("How are levels (0,1,2) classified?", use_container_width=True): suggested_prompt = "What does Low, Medium, High mean?"
 else:
-    if col1.button("Kasano nga aggana ti AI?", use_container_width=True): suggested_prompt = "Kasano nga ammuen ti AI ti daga?"
-    if col2.button("Adda kadi epekto ti maris?", use_container_width=True): suggested_prompt = "Apay a nangisit ti daga nga adu ti nitrogen?"
+    if col1.button("Kasano ti panagtrabaho ti AI?", use_container_width=True): suggested_prompt = "Kasano ti panagadal ti AI iti daga?"
+    if col2.button("Adda kadi epekto ti maris ti daga?", use_container_width=True): suggested_prompt = "Apay a nangisit ti daga no adu ti nitrogen?"
     if col3.button("Ania ti 0, 1, ken 2?", use_container_width=True): suggested_prompt = "Ania ti kayat a sawen ti 0, 1, ken 2?"
 
 # Display messages
@@ -121,7 +121,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # --- Chat Input Handling ---
-placeholder = "Ask about your soil..." if language_tab == "English" else "Agdamag maipapan iti daga..."
+placeholder = "Ask about your soil..." if language_tab == "English" else "Agdamagka maipapan iti daga..."
 user_input = st.chat_input(placeholder)
 
 if suggested_prompt:
